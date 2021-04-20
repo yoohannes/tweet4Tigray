@@ -10,3 +10,39 @@ auth=tweepy.OAuthHandler(api_key,api_secret_key)
 auth.set_access_token(acess_token,acess_token_secret)
 api=tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 user=api.me()
+def qouteHASH(hastag,items):
+    likecount=0
+    for tweet in tweepy.Cursor(api.search,hastag,tweetmode='extended').items(items):
+        try:
+            
+            tweet.favorite()
+            tweet.retweet()
+            likecount+=1
+            print(str(likecount)+"tweets tweeted")
+            time.sleep(10)
+        except tweepy.TweepError as e:
+            print(e.reason)
+        except StopIteration:
+            break
+#
+userid=[]
+for users in tweepy.Cursor(api.friends).items():
+        countretNlike=0
+        print(users.name)
+        userid.append(users.id)
+def likeNretweet(userid):
+    for user in userid:
+    
+    
+   
+        for tweet in tweepy.Cursor(api.user_timeline,user_id=user ,count=10,include_rts=True,exclude_replies=True).items(10):
+            try:
+            
+                #tweet.favorite()
+                tweet.retweet()
+                #print(tweet.text)
+                countretNlike=+1
+                print(str(countretNlike)+"done")
+                time.sleep(60)
+            except tweepy.TweepError as e:
+                print(e)        
