@@ -28,13 +28,10 @@ def qouteHASH(hastag,items):
 userid=[]
 for users in tweepy.Cursor(api.friends).items():
         countretNlike=0
-        print(users.name)
+        #print(users.name)
         userid.append(users.id)
 def likeNretweet(userid):
     for user in userid:
-    
-    
-   
         for tweet in tweepy.Cursor(api.user_timeline,user_id=user ,count=10,include_rts=True,exclude_replies=True).items(10):
             try:
             
