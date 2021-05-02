@@ -11,7 +11,7 @@ auth=tweepy.OAuthHandler(api_key,api_secret_key)
 auth.set_access_token(acess_token,acess_token_secret)
 api=tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 user=api.me()
-qouteHASH('#TigrayGenocide',100)
+
 def qouteHASH(hastag,items):
     likecount=0
     for tweet in tweepy.Cursor(api.search,hastag,tweetmode='extended').items(items):
@@ -45,3 +45,4 @@ def likeNretweet(userid):
                 time.sleep(60)
             except tweepy.TweepError as e:
                 print(e)        
+qouteHASH('#TigrayGenocide',100)
