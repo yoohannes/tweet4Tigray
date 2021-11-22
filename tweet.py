@@ -45,4 +45,4 @@ def likeNretweet(userid):
                 time.sleep(60)
             except tweepy.TweepError as e:
                 print(e)        
-qouteHASH('#TigrayGenocide',100)
+qouteHASH('#TigrayGenocide',150)
