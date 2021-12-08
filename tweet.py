@@ -1,8 +1,9 @@
 import tweepy
 import time
+import os 
 
-auth=tweepy.OAuthHandler(process.env.apiKEY,process.env.keySECRET)
-auth.set_access_token(process.env.acessToken,process.env.acessTokenSecret)
+auth=tweepy.OAuthHandler(os.environ['apiKEY'],os.environ['keySECRET'])
+auth.set_access_token(os.environ['acessToken'],os.environ['acessTokenSecret'])
 api=tweepy.API(auth,wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
 user=api.me()
 
