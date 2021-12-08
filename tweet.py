@@ -26,7 +26,7 @@ def qouteHASH(hastag,items):
             print(e.reason)
         except StopIteration:
             break
-#
+#use drafts instead ,log it 2
 userid=[]
 for users in tweepy.Cursor(api.friends).items():
         countretNlike=0
