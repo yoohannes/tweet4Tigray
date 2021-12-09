@@ -16,7 +16,7 @@ def qouteHASH(hastag,items):
             tweet.retweet()
             likecount+=1
             print(str(likecount)+"tweets tweeted")
-            sleep(5)
+            time.sleep(5)
             
         except tweepy.TweepError as e:
             print(e.reason)
