@@ -24,5 +24,7 @@ def qouteHASH(hastag,items):
             break
 
 
-      
-qouteHASH('#TigrayGenocide',100)
+quote1='#TigrayGenocide'
+quote2='400DaysOfTigrayGenocide'
+
+qouteHASH(quote2,100)
