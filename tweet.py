@@ -25,4 +25,4 @@ def qouteHASH(hastag,items):
 
 
       
-qouteHASH('#TigrayGenocide',150)
+qouteHASH('#TigrayGenocide',100)
